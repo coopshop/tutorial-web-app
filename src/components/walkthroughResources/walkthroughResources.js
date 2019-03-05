@@ -13,6 +13,7 @@ class WalkthroughResources extends React.Component {
 
   componentDidMount() {
     this.buildResourcesList();
+    this.getRepoDate();
   }
 
   mapServiceLinks() {
@@ -50,6 +51,18 @@ class WalkthroughResources extends React.Component {
     return null;
   }
 
+  getRepoDate = () => {
+    console.log(process.env);
+  };
+
+  getRepo() {}
+
+  // const normalizeUser = username => {
+  //   if (EMAIL_REGEX.test(username)) {
+  //     return username.split('@')[0];
+  //   }
+  //   return username;
+  // };
   static assignSerivceIcon(app) {
     const provisioningStatus = <Icon className="integr8ly-state-provisioining" type="fa" name="chart-pie" />;
     const readyStatus = <Icon className="integr8ly-state-ready" type="fa" name="bolt" />;
@@ -101,6 +114,9 @@ class WalkthroughResources extends React.Component {
     return (
       <div>
         <h3 className="integr8ly-helpful-links-heading">Walkthrough Resources</h3>
+        <div>[Source: ]</div>
+        <div>[Last Updated: ]</div>
+        <br />
         {this.state.resourceList}
         <div className={this.props.resources.length !== 0 ? 'hidden' : 'show'}>No resources available.</div>
       </div>
